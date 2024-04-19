@@ -13,7 +13,7 @@ namespace SimpleMinimalAPIs
             var builder = WebApplication.CreateBuilder(args);
 
 
-            builder.Services.AddControllers();
+            //builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -27,9 +27,9 @@ namespace SimpleMinimalAPIs
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             var pattern = "api/product";
 
@@ -102,7 +102,7 @@ namespace SimpleMinimalAPIs
             }).Produces<string>(statusCode: (int)HttpStatusCode.BadRequest)
             .Produces<string>(statusCode: (int)HttpStatusCode.OK);
 
-            app.MapControllers();
+            //app.MapControllers();
 
             app.Run();
         }
